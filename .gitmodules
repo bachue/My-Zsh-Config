@@ -1,0 +1,6 @@
+[submodule "bin/rm-trash"]
+	path = bin/rm-trash
+	url = https://gitcafe.com/bachue/rm-trash.git
+[submodule ".zsh-completions"]
+	path = .zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git

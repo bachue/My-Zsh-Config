@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+for i in "${@:2}"; do
+    if [[ ! "$i" =~ ^- ]]; then
+        cd `dirname $i`
+        break
+    fi
+done
+$@
