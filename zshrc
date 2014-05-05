@@ -44,6 +44,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+export PROMPT=${PROMPT/\%c/\%~} # Output current path rather than pwd name
+
 unsetopt correct_all
 
 zstyle ':completion:*:commands' rehash 1
