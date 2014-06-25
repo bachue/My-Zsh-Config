@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(absolute autojump battery brew brew-cask bundler colored-man colorize copydir cp docker-env encode64 extract gem git git-pickaxe jsontools load-rbenv load-rvm mongodb osx postgres pry rake rake-fast rbenv redis redis-cli rsync ruby ruby-functions sbcl sublime subla thor urltools vundle)
+plugins=(absolute autojump battery brew brew-cask bundler colored-man colorize copydir cp docker docker-env encode64 extract gem git git-pickaxe jsontools load-rbenv load-rvm mongodb osx postgres pry rake rake-fast rbenv redis redis-cli rsync ruby ruby-functions sbcl sublime subla thor urltools vundle)
 
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     plugins=($plugins rvm)
