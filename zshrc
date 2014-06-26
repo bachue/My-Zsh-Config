@@ -54,3 +54,6 @@ fpath=($ZSH_CUSTOM/.zsh-completions/src $fpath)
 
 autoload -U compinit
 compinit
+
+# Add more ulimit
+ulimit -S -n 4096
