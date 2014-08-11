@@ -11,7 +11,7 @@ if [[ -x "`which go`" ]]; then
         mkdir -p $TARGET &&
         cd $TARGET &&
         mkdir src bin pkg &&
-        export GOPATH=`pwd` &&
+        export GOPATH=$GOPATH:`pwd` &&
         echo "Environment GOPATH set" || echo "Create Project $TARGET Failed" 1>&2
     }
 fi
