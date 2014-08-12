@@ -14,4 +14,15 @@ if [[ -x "`which go`" ]]; then
         export GOPATH=$GOPATH:`pwd` &&
         echo "Environment GOPATH set" || echo "Create Project $TARGET Failed" 1>&2
     }
+
+    if [ -z "$DEFAULT_GOPATH" ]; then
+        export DEFAULT_GOPATH=$HOME/Projects/go_projects
+    fi
+
+    if [ -d "$DEFAULT_GOPATH" ]; then
+        export GOPATH=$DEFAULT_GOPATH
+        export PATH=$DEFAULT_GOPATH/bin:$PATH
+    else
+        echo "WARNING: \$DEFAULT_GOPATH $DEFAULT_GOPATH is not existed, Please create it and reset \$GOPATH" 1>&2
+    fi
 fi
