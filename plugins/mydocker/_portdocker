@@ -1,0 +1,10 @@
+#compdef portdocker
+
+local -a _list
+_list=(
+    port
+    map
+    del
+)
+
+_describe -t common-commands 'common commands' _list
