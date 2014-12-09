@@ -87,22 +87,30 @@ sshtunnel() {
         return
     fi;
 
-    SSH_CONFIG="-o 'ServerAliveInterval 15' -o 'ServerAliveCountMax 3'"
-    AUTOSSH_OPTS="-f -M $MONITOR_PORT $IDENTIFY_FILE -p $PROXY_SSH_PORT $SSH_CONFIG"
-    SSH_OPTS="$IDENTIFY_FILE -p $PROXY_SSH_PORT $SSH_CONFIG"
+    AUTOSSH_OPTS="-f -M $MONITOR_PORT $IDENTIFY_FILE -p $PROXY_SSH_PORT -o 'ServerAliveInterval 15' -o 'ServerAliveCountMax 3'"
+    SSH_OPTS="$IDENTIFY_FILE -p $PROXY_SSH_PORT"
 
     if [ "$ACTION" = "recv" ]; then
         if [ -x "`which autossh`" ]; then
-            COMMAND="autossh $AUTOSSH_OPTS -CNR $PROXY_PORT:127.0.0.1:$LOCAL_PORT"
+            COMMAND="autossh $AUTOSSH_OPTS -CNR $PROXY_PORT:localhost:$LOCAL_PORT"
         elif [ -x "`which ssh`" ]; then
-            COMMAND="ssh $SSH_OPTS -CNfR $PROXY_PORT:127.0.0.1:$LOCAL_PORT"
+            COMMAND="ssh $SSH_OPTS -CNfR $PROXY_PORT:localhost:$LOCAL_PORT"
         fi
     elif [ "$ACTION" = "send" ]; then
         if [ -x "`which autossh`" ]; then
-            COMMAND="autossh $AUTOSSH_OPTS -CNL $LOCAL_PORT:127.0.0.1:$PROXY_PORT"
+            COMMAND="autossh $AUTOSSH_OPTS -CNL $LOCAL_PORT:localhost:$PROXY_PORT"
         elif [ -x "`which ssh`" ]; then
-            COMMAND="ssh $SSH_OPTS -CNfL $LOCAL_PORT:127.0.0.1:$PROXY_PORT"
+            COMMAND="ssh $SSH_OPTS -CNfL $LOCAL_PORT:localhost:$PROXY_PORT"
         fi
     fi
     eval "$COMMAND $PROXY_USER@$PROXY_HOST"
+    RET=$?
+    if [ "$RET" = "0" ]; then
+        if [ "$ACTION" = "recv" ]; then
+            echo "sshtunnel to localhost:$LOCAL_PORT opened, now run command \`$PROGRAM send --proxy-host $PROXY_HOST --proxy-port $PROXY_PORT --proxy-user $PROXY_USER --proxy-ssh-port $PROXY_SSH_PORT $IDENTIFY_FILE\` to connect to it."
+        elif [ "$ACTION" = "send" ]; then
+            echo "sshtunnel to $PROXY_HOST:$PROXY_PORT opened, any data send to localhost:$LOCAL_PORT will be forward to it."
+        fi
+    fi
+    return $RET
 }
