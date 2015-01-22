@@ -5,6 +5,7 @@ _list=(
     port
     map
     del
+    list
 )
 
 _describe -t common-commands 'common commands' _list
