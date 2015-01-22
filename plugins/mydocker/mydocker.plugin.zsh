@@ -5,6 +5,7 @@ if [[ -x "`which boot2docker`" ]]; then
     alias psdocker='docker ps -a -q'
     alias killalldocker='docker stop `psdocker`'
     alias rmalldocker='docker rm `psdocker`'
+    alias startdocker='boot2docker start && `boot2docker shellinit 2>/dev/null`'
 
     portdocker() {
         MACHINENAME="boot2docker-vm"
