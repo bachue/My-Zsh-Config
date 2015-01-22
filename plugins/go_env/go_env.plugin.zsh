@@ -15,6 +15,11 @@ if [[ -x "`which go`" ]]; then
         echo "Environment GOPATH set" || echo "Create Project $TARGET Failed" 1>&2
     }
 
+    go_project() {
+        cd $1 &&
+        export GOPATH=$GOPATH:`pwd`
+    }
+
     GOROOT=`go env GOROOT`
     if [ -n "$GOROOT" ]; then
         export PATH=$GOROOT/bin:$PATH
