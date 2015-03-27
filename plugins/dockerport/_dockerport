@@ -1,4 +1,4 @@
-#compdef portdocker
+#compdef dockerport
 
 local -a _list
 _list=(
