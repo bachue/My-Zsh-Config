@@ -10,3 +10,6 @@
 [submodule "bin/dashlinuxman"]
 	path = bin/dashlinuxman
 	url = https://github.com/bachue/dashlinuxman.git
+[submodule "bin/dockerport"]
+	path = bin/dockerport
+	url = https://github.com/bachue/dockerport.git
