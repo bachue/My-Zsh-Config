@@ -1,3 +1,6 @@
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US:en
+
 # Path to your customized zsh configuration.
 ZSH_CUSTOM=$HOME/.zsh-config
 
