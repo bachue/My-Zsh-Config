@@ -52,7 +52,7 @@ unsetopt correct_all
 
 zstyle ':completion:*:commands' rehash 1
 
-fpath=($ZSH_CUSTOM/.zsh-completions/src $fpath)
+fpath=($ZSH_CUSTOM/.zsh-completions/src $ZSH_CUSTOM/.rust-completions $fpath)
 
 autoload -U compinit
 compinit

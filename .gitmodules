@@ -13,3 +13,6 @@
 [submodule "bin/dockerport"]
 	path = bin/dockerport
 	url = https://github.com/bachue/dockerport.git
+[submodule ".rust-completions"]
+	path = .rust-completions
+	url = https://github.com/rust-lang/zsh-config.git
