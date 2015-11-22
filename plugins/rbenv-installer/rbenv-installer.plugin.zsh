@@ -11,6 +11,8 @@ if [ ! -d "$HOME/.rbenv" ]; then
             git clone https://github.com/tpope/rbenv-aliases.git $HOME/.rbenv/plugins/rbenv-aliases
             git clone https://github.com/bachue/rbenv-gemdir.git $HOME/.rbenv/plugins/rbenv-gemdir
             echo "bundler" > $HOME/.rbenv/default-gems
+            export PATH=$HOME/.rbenv/bin:$PATH
+            eval "`$HOME/.rbenv/bin/rbenv init -`"
             rbenv alias --auto
         fi
     }
