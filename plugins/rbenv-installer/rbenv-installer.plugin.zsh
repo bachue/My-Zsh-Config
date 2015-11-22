@@ -14,6 +14,8 @@ if [ ! -d "$HOME/.rbenv" ]; then
             export PATH=$HOME/.rbenv/bin:$PATH
             eval "`$HOME/.rbenv/bin/rbenv init -`"
             rbenv alias --auto
+            gem sources --remove http://rubygems.org/
+            gem sources --add https://ruby.taobao.org/
         fi
     }
 fi
