@@ -8,6 +8,8 @@ ruby <<RUBY
     云梯 日本2号 L2TP
     云梯 日本3号 PPTP
     云梯 日本3号 L2TP
+    云梯 日本4号 PPTP
+    云梯 日本4号 L2TP
     云梯 美国1号 PPTP
     云梯 美国1号 L2TP
     云梯 美国2号 L2TP
@@ -18,6 +20,8 @@ ruby <<RUBY
     云梯 美国4号 L2TP
     云梯 美国5号 PPTP
     云梯 美国5号 L2TP
+    云梯 美国6号 PPTP
+    云梯 美国6号 L2TP
     云梯 新加坡1号 PPTP
     云梯 新加坡1号 L2TP
     云梯 新加坡2号 PPTP
@@ -26,6 +30,8 @@ ruby <<RUBY
     云梯 香港1号 L2TP
     云梯 香港2号 PPTP
     云梯 香港2号 L2TP
+    云梯 香港3号 PPTP
+    云梯 香港3号 L2TP
     云梯 台湾1号 PPTP
     云梯 台湾1号 L2TP
     云梯 英国1号 PPTP
