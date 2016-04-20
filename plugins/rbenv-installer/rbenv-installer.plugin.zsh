@@ -10,6 +10,7 @@ if [ ! -d "$HOME/.rbenv" ]; then
             git clone https://github.com/rkh/rbenv-update.git $HOME/.rbenv/plugins/rbenv-update
             git clone https://github.com/tpope/rbenv-aliases.git $HOME/.rbenv/plugins/rbenv-aliases
             git clone https://github.com/bachue/rbenv-gemdir.git $HOME/.rbenv/plugins/rbenv-gemdir
+            git clone https://github.com/andorchen/rbenv-china-mirror.git $HOME/.rbenv/plugins/rbenv-china-mirror
             echo "bundler" > $HOME/.rbenv/default-gems
             export PATH=$HOME/.rbenv/bin:$PATH
             eval "`$HOME/.rbenv/bin/rbenv init -`"
