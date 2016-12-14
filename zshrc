@@ -35,7 +35,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(absolute autojump battery brew brew-cask clear_ssh_socks colored-man colorize copydir cp docker docker-machine encode64 extract git-pickaxe go go_env rbenv-installer jsontools mongodb osx pry rake rake-fast rbenv redis-cli rsync ruby-functions sbcl sshtunnel sublime thor urltools vpncloud vundle zsh-reload zsh-syntax-highlighting)
+plugins=(absolute autojump battery brew brew-cask colored-man colorize copydir cp docker docker-machine encode64 extract git-pickaxe go go_env rbenv-installer jsontools mongodb osx pry rake rake-fast rbenv redis-cli rsync ruby-functions sbcl sshtunnel sublime thor urltools vpncloud vundle zsh-reload zsh-syntax-highlighting)
 
 export PATH=$ZSH_CUSTOM/bin:/usr/local/bin:/usr/local/sbin:$PATH
 if [ -d "$ZSH_CUSTOM/man" ]; then
@@ -59,3 +59,5 @@ compinit
 
 # Add more ulimit
 ulimit -S -n 4096
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
