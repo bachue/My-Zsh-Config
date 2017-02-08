@@ -16,7 +16,7 @@ if [ ! -d "$HOME/.rbenv" ]; then
             eval "`$HOME/.rbenv/bin/rbenv init -`"
             rbenv alias --auto
             gem sources --remove http://rubygems.org/
-            gem sources --add https://ruby.taobao.org/
+            gem sources --add https://gems.ruby-china.org/
         fi
     }
 fi
