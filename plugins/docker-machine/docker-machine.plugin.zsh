@@ -1,6 +1,8 @@
-if [ -x "`which docker-machine`" ]; then
-    shellinit="$(docker-machine env 2>/dev/null)"
-    if [ "$?" = "0" ]; then
-        eval "$shellinit"
-    fi
+if [ -x "`which docker`" ]; then
+    clear_docker_envs() {
+        unset DOCKER_TLS_VERIFY
+        unset DOCKER_CERT_PATH
+        unset DOCKER_MACHINE_NAME
+        unset DOCKER_HOST
+    }
 fi
